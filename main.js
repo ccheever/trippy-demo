@@ -123,7 +123,6 @@ class Demo extends React.Component {
     doSpin();
 
     let doLottie = () => {
-      console.log("doLottie");
       this.state.progress.setValue(0);
       Animated.timing(this.state.progress, {
         toValue: 1,
@@ -211,7 +210,6 @@ class JustLottie extends React.Component {
 
   componentDidMount() {
     let doLottie = () => {
-      console.log("doLottie");
       this.state.progress.setValue(0);
       Animated.timing(this.state.progress, {
         toValue: 1,
