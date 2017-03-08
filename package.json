@@ -1,7 +1,7 @@
 {
-  "name": "trippy",
+  "name": "@expo/trippy",
   "version": "0.0.0",
-  "description": "Hello Expo!",
+  "description": "A trippy full screen component",
   "author": null,
   "private": true,
   "main": "main.js",

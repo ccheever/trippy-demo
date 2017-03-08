@@ -40,7 +40,7 @@ class App extends React.Component {
 
   async _cacheResourcesAsync() {
     const assets = [
-      require('./assets/trippy-vines-trailer.mp4'),
+      require('./assets/trippy-vines.3gp'),
       // require('./assets/logo.json'),
     ];
 
@@ -170,7 +170,7 @@ class Demo extends React.Component {
             style={{
               flex: 1,
             }} 
-            source={require('./assets/trippy-vines-trailer.mp4')}
+            source={require('./assets/trippy-vines.3gp')}
           />
         </Animated.View>
 
@@ -283,3 +283,5 @@ const styles = StyleSheet.create({
 
 // Exponent.registerRootComponent(JustLottie);
 Exponent.registerRootComponent(App);
+
+export default App;
