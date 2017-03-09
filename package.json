@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A trippy full screen component",
   "author": null,
-  "private": true,
+  "private": false,
   "main": "main.js",
   "dependencies": {
     "@exponent/vector-icons": "~4.0.0",
