@@ -40,7 +40,8 @@ class App extends React.Component {
 
   async _cacheResourcesAsync() {
     const assets = [
-      require('./assets/trippy-vines.3gp'),
+      require('./assets/trippy-animals.mp4'),
+      //require('./assets/trippy-vines.3gp'),
       // require('./assets/logo.json'),
     ];
 
@@ -96,7 +97,7 @@ class Demo extends React.Component {
     doZoom();
 
     let doBounce = () => {
-      this.state.bounceValue.setValue(30);     // Start large
+      this.state.bounceValue.setValue(3);     // Start large
 
 
       Animated.spring(                          // Base: spring, decay, timing
@@ -170,7 +171,8 @@ class Demo extends React.Component {
             style={{
               flex: 1,
             }} 
-            source={require('./assets/trippy-vines.3gp')}
+            source={require('./assets/trippy-animals.mp4')}
+            repeat={true}
           />
         </Animated.View>
 
@@ -191,6 +193,10 @@ class Demo extends React.Component {
         </Animated.View>
 
         <JustLottie />
+
+        <SixtyFPS />
+
+        <FeatureList />
 
 
       </View>
@@ -272,6 +278,90 @@ class JustLottie extends React.Component {
   }
 }
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+
+class SixtyFPS extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: 'white',
+    };
+  }
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ color: getRandomColor()});
+    }, 15);
+  }
+  render() {
+    return (
+      <Text style={{
+        fontSize: 60,
+        fontWeight: 'bold',
+        color: this.state.color,
+        zIndex: 3,
+        right: 15,
+        top: 15,
+        backgroundColor: 'transparent',
+        position: 'absolute',
+      }}>60fps<Text style={{fontSize: 14}}>(mostly)</Text></Text>
+    );
+  }
+}
+
+class FeatureList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      n: 0,
+    };
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({n: this.state.n + 1});
+    }, 350);
+  }
+  render() {
+    let features = [
+      'EXPO',
+      'Native Functionality',
+      'Video',
+      'Lottie Animations',
+      'Native Maps',
+      'OpenGL Graphics',
+      'Camera Access',
+      'Facebook Login',
+      'Google Login',
+      'Push Notifications',
+      'Gyroscope',
+      'Bar code scanning',
+      'Turning your phone into a space heater',
+    ];
+
+    return (
+      <Text style={{
+        zIndex: 6,
+        fontFamily: 'AmericanTypewriter-CondensedBold',
+        backgroundColor: 'transparent',
+        position: 'absolute',
+        top: 150,
+        left: 10,
+        fontSize: 70,
+        fontWeight: 'bold',
+        color: getRandomColor(),
+      }}>{features[this.state.n % features.length]}</Text>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -282,6 +372,7 @@ const styles = StyleSheet.create({
 });
 
 // Exponent.registerRootComponent(JustLottie);
+// Exponent.registerRootComponent(FeatureList);
 Exponent.registerRootComponent(App);
 
 export default App;

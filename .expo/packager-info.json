@@ -1,8 +1,8 @@
 {
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19002,
+  "packagerPort": 19003,
+  "packagerPid": 2412,
+  "expoServerNgrokUrl": "https://hg-j2x.ccheever.trippy.exp.direct",
+  "packagerNgrokUrl": "https://packager.hg-j2x.ccheever.trippy.exp.direct",
+  "ngrokPid": 2427
 }
